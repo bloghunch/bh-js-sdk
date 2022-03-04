@@ -1,0 +1,17 @@
+{
+  "name": "bh-node-api",
+  "version": "1.0.1",
+  "description": "NodeJS API for BlogHunch",
+  "type": "module",
+  "main": "index.js",
+  "keywords": ["bloghunch", "bloghunch node api", "bh node", "blogging api"],
+  "author": "BlogHunch",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bloghunch/bh-node-api.git"
+  }
+}
