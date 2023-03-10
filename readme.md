@@ -1,10 +1,12 @@
 # BlogHunch Node SDK
-BlogHunch Node API helps you to easily access the API to fetch posts, pages etc.
+BlogHunch Node API helps you to easily access the API to fetch posts, pages, comments, subscribers, and tags.
 ## Features
 
-- Fetch publication details.
 - Fetch all posts and pages.
-- Fetch SEO asscoiated to single posts or pages.
+- Fetch a single post or page.
+- Fetch all commnets of a post.
+- Fetch all subscribers.
+- Fetch all tags.
 
 ## Installation
 
@@ -19,20 +21,12 @@ npm install bh-node-api
 ## How to use
 
 ```javascript
-import { getAllPosts, getPost } from 'bh-node-api' 
+import ApiClient from 'bh-node-api' 
+
+const client = ApiClient(token, subdomain)
 ```
 
-Get all posts:
-
-```javascript
-const posts = await getAllPosts(apiKey, publicationDomain or publicationSubdomain)
-```
-
-Get single post:
-
-```javascript
-const post = await getPost(apiKey, publicationDomain or publicationSubdomain, slug)
-```
+Check out the entire API documentation here(https://api-docs.bloghunch.com/). Feel free to reach out to support(https://bloghunch.com/contact) for any queries.
 
 ## License
 
