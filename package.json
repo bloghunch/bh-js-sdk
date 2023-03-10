@@ -4,7 +4,7 @@
   "description": "NodeJS API for BlogHunch",
   "type": "module",
   "main": "index.js",
-  "keywords": ["bloghunch", "bloghunch node api", "bh node", "blogging api"],
+  "keywords": ["bloghunch", "bloghunch node api", "bh node", "blogging api", "bloghunch js sdk"],
   "author": "BlogHunch",
   "license": "ISC",
   "dependencies": {

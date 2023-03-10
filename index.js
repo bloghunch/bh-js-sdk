@@ -1,40 +1,94 @@
 import axios from "axios";
+const apiUrl = 'http://localhost:3333' // 'https://api.bloghunch.com';
 
-let getAllPosts = async function(key, domain) {
-	var result;
-
-	try {
-		result = await axios
-		.get(`https://api.bloghunch.com/app/${domain}/posts`, {
-			headers: {
-				Authorization: `Bearer ${key}`
-			}
-		})
-	} catch(e) {
-		console.log(e);
+export default class Bloghunch {
+	constructor(key, domain) {
+		this.key = key;
+		this.domain = domain;
 	}
-	
-	return result.data.posts;
-}
 
-let getPost = async function(key, domain, slug) {
-	var result;
+	async getAllPosts() {
+		const url = `${apiUrl}/app/${this.domain}/posts`;
 
-	try {
-		result = await axios
-		.get(`https://api.bloghunch.com/app/${domain}/posts/${slug}`, {
-			headers: {
-				Authorization: `Bearer ${key}`
-			}
-		})
-	} catch(e) {
-		console.log(e);
+		try {
+			const result = await axios
+			.get(url, {
+				headers: {
+					Authorization: `Bearer ${this.key}`
+				}
+			});
+
+			return result.data.posts;
+		} catch(e) {
+			console.log(e.response);
+		}
 	}
-	
-	return result.data.post;
-}
 
-export {
-	getAllPosts,
-	getPost
-}
+	async getPost(slug) {
+		const url = `${apiUrl}/app/${this.domain}/posts/${slug}`;
+
+		try {
+			const result = await axios
+			.get(url, {
+				headers: {
+					Authorization: `Bearer ${this.key}`
+				}
+			});
+
+			return result.data.post;
+		} catch(e) {
+			console.log(e.response);
+		}
+	}
+
+	async getPostComments(post_id) {
+		const url = `${apiUrl}/app/${this.domain}/comments/${post_id}`;
+
+		try {
+			const result = await axios
+			.get(url, {
+				headers: {
+					Authorization: `Bearer ${this.key}`
+				}
+			});
+
+			return result.data;
+		} catch(e) {
+			console.log(e.response);
+		}
+	}
+
+	async getAllSubscribers() {
+		const url = `${apiUrl}/app/${this.domain}/subscribers`;
+
+		try {
+			const result = await axios
+			.get(url, {
+				headers: {
+					Authorization: `Bearer ${this.key}`
+				}
+			});
+
+			return result.data;
+		} catch(e) {
+			console.log(e.response);
+		}
+	}
+
+	async getAllTags() {
+		const url = `${apiUrl}/app/${this.domain}/tags`;
+
+		try {
+			const result = await axios
+			.get(url, {
+				headers: {
+					Authorization: `Bearer ${this.key}`
+				}
+			});
+
+			return result.data;
+		} catch(e) {
+			console.log(e.response);
+		}
+	}
+};
