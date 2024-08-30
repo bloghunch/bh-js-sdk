@@ -26,7 +26,7 @@ import ApiClient from 'bh-node-api'
 const client = ApiClient(token, subdomain)
 ```
 
-Check out the entire API documentation here(https://api-docs.bloghunch.com/). Feel free to reach out to support(https://bloghunch.com/contact) for any queries.
+Check out the entire API documentation here(https://developer.bloghunch.com/). Feel free to reach out to support(https://bloghunch.com/contact) for any queries.
 
 ## License
 

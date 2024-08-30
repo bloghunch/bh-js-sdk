@@ -1,5 +1,4 @@
-import axios from "axios";
-const apiUrl = 'http://localhost:3333' // 'https://api.bloghunch.com';
+const apiUrl = 'https://api.bloghunch.com';
 
 export default class Bloghunch {
 	constructor(key, domain) {
@@ -11,14 +10,15 @@ export default class Bloghunch {
 		const url = `${apiUrl}/app/${this.domain}/posts`;
 
 		try {
-			const result = await axios
-			.get(url, {
+			const result = await fetch(url, {
+				method: 'GET',
 				headers: {
 					Authorization: `Bearer ${this.key}`
 				}
-			});
+			})
 
-			return result.data.posts;
+			const data = await result.json();
+			return data.posts;
 		} catch(e) {
 			console.log(e.response);
 		}
@@ -28,14 +28,15 @@ export default class Bloghunch {
 		const url = `${apiUrl}/app/${this.domain}/posts/${slug}`;
 
 		try {
-			const result = await axios
-			.get(url, {
+			const result = await fetch(url, {
+				method: 'GET',
 				headers: {
 					Authorization: `Bearer ${this.key}`
 				}
 			});
 
-			return result.data.post;
+			const data = await result.json();
+			return data.post;
 		} catch(e) {
 			console.log(e.response);
 		}
@@ -45,14 +46,14 @@ export default class Bloghunch {
 		const url = `${apiUrl}/app/${this.domain}/comments/${post_id}`;
 
 		try {
-			const result = await axios
-			.get(url, {
+			const result = await fetch(url, {
 				headers: {
 					Authorization: `Bearer ${this.key}`
 				}
 			});
 
-			return result.data;
+			const data = await result.json();
+			return data;
 		} catch(e) {
 			console.log(e.response);
 		}
@@ -62,14 +63,14 @@ export default class Bloghunch {
 		const url = `${apiUrl}/app/${this.domain}/subscribers`;
 
 		try {
-			const result = await axios
-			.get(url, {
+			const result = await fetch(url, {
 				headers: {
 					Authorization: `Bearer ${this.key}`
 				}
 			});
 
-			return result.data;
+			const data = await result.json();
+			return data;
 		} catch(e) {
 			console.log(e.response);
 		}
@@ -79,14 +80,14 @@ export default class Bloghunch {
 		const url = `${apiUrl}/app/${this.domain}/tags`;
 
 		try {
-			const result = await axios
-			.get(url, {
+			const result = await fetch(url, {
 				headers: {
 					Authorization: `Bearer ${this.key}`
 				}
 			});
 
-			return result.data;
+			const data = await result.json();
+			return data;
 		} catch(e) {
 			console.log(e.response);
 		}
