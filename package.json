@@ -1,5 +1,5 @@
 {
-  "name": "bh-node-api",
+  "name": "@bloghunch/js-sdk",
   "version": "1.0.2",
   "description": "JS SDK for BlogHunch",
   "type": "module",
@@ -12,9 +12,17 @@
     "bloghunch js sdk"
   ],
   "author": "BlogHunch",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bloghunch/bh-node-api.git"
+    "url": "git+https://github.com/bloghunch/bh-js-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bloghunch/bh-js-sdk/issues"
+  },
+  "homepage": "https://github.com/bloghunch/bh-js-sdk#readme",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
